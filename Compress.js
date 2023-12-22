@@ -19,26 +19,24 @@ async function Start(){
 
   let ans = await inquirer.prompt(questions);
   let files = await Fs.readdir(inputFolder);
-  _.map(files, (o, i) => {
+  for (const o of files){
     ffmpeg(inputFolder + "/" + o)
-      .size(ans?.percent + "%")
-      .output(outputFolder + "/mod-" + o)
-      .on("start", (msg) => {
-        console.log("Processing " + o + "...");
-      })
-      .on("error", (err) => {
-        console.log("An error occurred: " + err.message);
-      })  
-      .on("progress", (progress) => { 
-        console.log(progress);
-        console.log("... frames: " + progress.frames + " ...");
-      })
-      .on("end", () => { 
-        console.log("Finished processing " + o); 
-      })
-      .run();
-  });
-  
+    .size(ans?.percent + "%")
+    .output(outputFolder + "/" + o)
+    .on("start", (msg) => {
+      console.log("Processing " + o + "...");
+    })
+    .on("error", (err) => {
+      console.log("An error occurred: " + err.message);
+    })  
+    .on("progress", (progress) => { 
+      console.log("... frames: " + progress.frames + " ...");
+    })
+    .on("end", () => { 
+      console.log("Finished processing " + o); 
+    })
+    .run();
+  }
 };
 
 

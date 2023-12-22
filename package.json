@@ -11,6 +11,6 @@
     "util": "^0.12.5"
   },
   "scripts": {
-    "pkg": "pkg Compress.js -o VideoCompress.exe"
+    "pkg": "pkg Compress.js -o VideoCompress"
   }
 }
