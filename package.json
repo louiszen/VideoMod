@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.6",
+    "lodash": "^4.17.21",
+    "make-dir": "^4.0.0",
+    "nexe": "^4.0.0-rc.2",
+    "path": "^0.12.7",
+    "rimraf": "^5.0.5",
+    "util": "^0.12.5"
+  },
+  "scripts": {
+    "pkg": "pkg Compress.js -o VideoCompress.exe"
+  }
+}
